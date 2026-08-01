@@ -1,0 +1,824 @@
+/* =========================================
+   1. CSS VARIABLES
+========================================= */
+
+:root {
+    /* Wolaita Flag Inspired Colors */
+    --primary-color: #e30613;       /* Red */
+    --primary-dark: #b8000b;        /* Dark Red */
+    --primary-light: #fff0f1;       /* Very Light Red */
+
+    --secondary-color: #ffdf00;     /* Yellow */
+    --secondary-dark: #d6b900;      /* Dark Yellow */
+    --secondary-light: #fffbea;     /* Very Light Yellow */
+
+    --black: #000000;
+    --black-light: #1a1a1a;
+
+    /* Neutral Colors */
+    --white: #ffffff;
+    --background-color: #f7f7f7;
+    --light-gray: #eeeeee;
+    --border-color: #dddddd;
+
+    --text-dark: #1a1a1a;
+    --text-medium: #555555;
+    --text-light: #777777;
+
+    /* Design */
+    --border-radius: 8px;
+
+    --container-width: 1200px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.10);
+
+    /* Transitions */
+    --transition: 0.3s ease;
+}
+
+
+/* =========================================
+   2. RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================
+   3. CONTAINER
+========================================= */
+
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   4. BUTTONS
+========================================= */
+
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+
+    border-radius: var(--border-radius);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    border: 2px solid transparent;
+
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+
+/* Main Red Button */
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+
+/* White Button */
+
+.btn-secondary {
+    background-color: var(--white);
+    color: var(--black);
+    border-color: var(--black);
+}
+
+.btn-secondary:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+
+/* =========================================
+   5. NAVIGATION
+========================================= */
+
+.navbar {
+    background-color: var(--black);
+    color: var(--white);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+.navbar-container {
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-links .nav-register {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.nav-links .nav-register:hover {
+    color: var(--white);
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--white);
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+
+/* Logo Mark */
+
+.logo-mark {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+/* Flag-inspired logo stripes */
+
+.logo-mark span {
+    flex: 1;
+    display: block;
+}
+
+
+/* Red */
+
+.logo-mark span:nth-child(1) {
+    background-color: var(--primary-color);
+}
+
+
+/* Yellow */
+
+.logo-mark span:nth-child(2) {
+    background-color: var(--secondary-color);
+}
+
+
+/* Black */
+
+.logo-mark span:nth-child(3) {
+    background-color: var(--black);
+}
+
+
+/* Logo Text */
+
+.logo-text {
+    color: var(--white);
+}
+
+.logo-text span {
+    color: var(--secondary-color);
+}
+
+
+/* Navigation Links */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: 500;
+
+    color: var(--white);
+
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+.nav-links a.active {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+
+/* Login */
+
+.nav-links .nav-login {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+
+/* Mobile Menu */
+
+.menu-toggle {
+    display: none;
+
+    background: none;
+    border: none;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    color: var(--white);
+}
+
+
+/* =========================================
+   6. HERO SECTION
+========================================= */
+
+.hero {
+    background-color: var(--primary-color);
+
+    padding: 100px 0;
+
+    color: var(--white);
+
+    /* Yellow Flag-Inspired Border */
+    border-bottom: 8px solid var(--secondary-color);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+
+/* Small Heading */
+
+.hero-label {
+    color: var(--secondary-color);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 15px;
+}
+
+
+/* Main Heading */
+
+.hero h1 {
+    font-size: 56px;
+    line-height: 1.15;
+
+    margin-bottom: 25px;
+
+    color: var(--white);
+}
+
+.hero h1 span {
+    color: var(--secondary-color);
+}
+
+
+/* Description */
+
+.hero-description {
+    max-width: 600px;
+
+    font-size: 18px;
+
+    color: var(--white);
+
+    opacity: 0.9;
+
+    margin-bottom: 30px;
+}
+
+
+/* Hero Buttons */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* Hero Primary Button */
+
+.hero .btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--black);
+}
+
+.hero .btn-primary:hover {
+    background-color: var(--white);
+}
+
+
+/* Hero Secondary Button */
+
+.hero .btn-secondary {
+    background-color: transparent;
+
+    color: var(--white);
+
+    border-color: var(--white);
+}
+
+.hero .btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+
+/* =========================================
+   7. GENERAL SECTIONS
+========================================= */
+
+section {
+    padding: 80px 0;
+}
+
+.section-heading {
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: 0 auto 50px;
+}
+
+.section-label {
+    color: var(--primary-color);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-size: 34px;
+
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    color: var(--text-medium);
+}
+
+
+/* =========================================
+   8. QUICK ACTIONS
+========================================= */
+
+.quick-actions {
+    background-color: var(--white);
+}
+
+.action-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.action-card {
+    padding: 30px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--border-radius);
+
+    box-shadow: var(--shadow-sm);
+
+    transition: var(--transition);
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow-md);
+
+    border-color: var(--primary-color);
+}
+
+
+/* Action Icon */
+
+.action-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--primary-light);
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+.action-card h3 {
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+.action-card p {
+    color: var(--text-medium);
+
+    margin-bottom: 20px;
+}
+
+.action-card a {
+    color: var(--primary-color);
+
+    font-weight: 600;
+}
+
+.action-card a:hover {
+    color: var(--primary-dark);
+}
+
+
+/* =========================================
+   9. CATEGORIES
+========================================= */
+
+.categories {
+    background-color: var(--background-color);
+}
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.category-card {
+    background-color: var(--white);
+
+    padding: 30px;
+
+    border-radius: var(--border-radius);
+
+    border: 1px solid var(--border-color);
+
+    text-align: center;
+
+    transition: var(--transition);
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+
+    border-color: var(--primary-color);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.category-card span {
+    display: block;
+
+    font-size: 35px;
+
+    margin-bottom: 12px;
+}
+
+.category-card h3 {
+    font-size: 18px;
+}
+
+
+/* =========================================
+   10. HOW IT WORKS
+========================================= */
+
+.how-it-works {
+    background-color: var(--white);
+}
+
+.steps {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 30px;
+}
+
+.step {
+    text-align: center;
+
+    position: relative;
+}
+
+
+/* Number Circle */
+
+.step-number {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    background-color: var(--black);
+
+    color: var(--secondary-color);
+
+    border: 3px solid var(--secondary-color);
+
+    border-radius: 50%;
+
+    font-weight: 700;
+}
+
+.step h3 {
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: var(--text-medium);
+}
+
+
+/* =========================================
+   11. FOOTER
+========================================= */
+
+.footer {
+    background-color: var(--black);
+
+    color: var(--white);
+
+    border-top: 6px solid var(--secondary-color);
+}
+
+.footer-container {
+    padding: 50px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.footer-brand h3 {
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.footer-brand h3 span {
+    color: var(--secondary-color);
+}
+
+.footer-brand p {
+    color: #cccccc;
+}
+
+.footer-links {
+    display: flex;
+
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #dddddd;
+
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid #333333;
+
+    text-align: center;
+
+    padding: 20px;
+
+    color: #aaaaaa;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   12. TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .action-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+
+        row-gap: 40px;
+    }
+}
+
+
+/* =========================================
+   13. MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    /* Navigation */
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding: 70px 0;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    /* Sections */
+
+    section {
+        padding: 60px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+
+
+    /* Categories */
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Steps */
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Footer */
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+}
+
+
+/* =========================================
+   14. SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .action-card {
+        padding: 25px;
+    }
+}

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Report a local problem in Wolaita and help improve your community.">
+
+    <title>Report a Problem | Wolaita Reporter</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+    <header class="navbar">
+
+        <div class="container navbar-container">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+
+                <span class="logo-mark">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+
+                <span class="logo-text">
+                    Wolaita<span>Reporter</span>
+                </span>
+
+            </a>
+
+
+            <!-- Navigation -->
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="reports.html">
+                    Explore Problems
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="register.html">
+                    Register
+                </a>
+
+                <a href="report.html" class="btn btn-primary active">
+                    Report a Problem
+                </a>
+
+            </nav>
+
+
+            <!-- Mobile Menu -->
+            <button class="menu-toggle" aria-label="Open navigation menu">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         REPORT SECTION
+    ========================== -->
+    <main>
+
+        <section class="report-section">
+
+            <div class="report-container">
+
+                <!-- Page Header -->
+                <div class="report-header">
+
+                    <p class="section-label">
+                        MAKE A DIFFERENCE
+                    </p>
+
+                    <h1>
+                        Report a Problem
+                    </h1>
+
+                    <p>
+                        Tell us about a problem affecting your
+                        community. Your report can help bring
+                        attention to issues that need action.
+                    </p>
+
+                </div>
+
+
+                <!-- Report Form -->
+                <form class="report-form" id="reportForm">
+
+                    <!-- Problem Title -->
+                    <div class="form-group">
+
+                        <label for="problemTitle">
+                            Problem Title
+                        </label>
+
+                        <input
+                            type="text"
+                            id="problemTitle"
+                            name="problemTitle"
+                            placeholder="e.g. Damaged road near the market"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Category -->
+                    <div class="form-group">
+
+                        <label for="category">
+                            Problem Category
+                        </label>
+
+                        <select
+                            id="category"
+                            name="category"
+                            required
+                        >
+
+                            <option value="">
+                                Select a category
+                            </option>
+
+                            <option value="roads">
+                                Roads
+                            </option>
+
+                            <option value="water">
+                                Water
+                            </option>
+
+                            <option value="electricity">
+                                Electricity
+                            </option>
+
+                            <option value="waste">
+                                Waste Management
+                            </option>
+
+                            <option value="public-facilities">
+                                Public Facilities
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+<!-- =========================
+     LOCATION
+========================== -->
+
+<div class="location-section">
+
+    <h3 class="form-section-title">
+        Problem Location
+    </h3>
+
+    <p class="form-section-description">
+        Select the city, town, or district where the problem
+        is located.
+    </p>
+
+
+                        <!-- Location Type -->
+
+                        <div class="form-group">
+
+                            <label for="locationType">
+                                Location Type
+                            </label>
+
+                            <select
+                                id="locationType"
+                                name="locationType"
+                                required
+                            >
+
+                                <option value="">
+                                    Select location type
+                                </option>
+
+                                <option value="sodo-city">
+                                    Sodo City
+                                </option>
+
+                                <option value="other-cities-towns">
+                                    Other Cities & Towns
+                                </option>
+
+                                <option value="districts">
+                                    Districts (Woredas)
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- City / Town -->
+
+                        <div class="form-group">
+
+                            <label for="cityTown">
+                                City or Town
+                            </label>
+
+                            <select
+                                id="cityTown"
+                                name="cityTown"
+                            >
+
+                                <option value="">
+                                    Select a city or town
+                                </option>
+
+                                <option value="areka">
+                                    Areka
+                                </option>
+
+                                <option value="boditi">
+                                    Boditi
+                                </option>
+
+                                <option value="tebela">
+                                    Tebela
+                                </option>
+
+                                <option value="bale">
+                                    Bale
+                                </option>
+
+                                <option value="gesuba">
+                                    Gesuba
+                                </option>
+
+                                <option value="gununo">
+                                    Gununo
+                                </option>
+
+                                <option value="bedessa">
+                                    Bedessa
+                                </option>
+
+                                <option value="dimtu">
+                                    Dimtu
+                                </option>
+
+                                <option value="shanto">
+                                    Shanto
+                                </option>
+
+                                <option value="bombe">
+                                    Bombe
+                                </option>
+
+                                <option value="bitena">
+                                    Bitena
+                                </option>
+
+                                <option value="bada">
+                                    Bada
+                                </option>
+
+                                <option value="beklo-segno">
+                                    Beklo Segno (Baqulo Sagno)
+                                </option>
+
+                                <option value="kercheche">
+                                    Kercheche
+                                </option>
+
+                                <option value="lasho">
+                                    Lasho
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- District / Woreda -->
+
+                        <div class="form-group">
+
+                            <label for="district">
+                                District (Woreda)
+                            </label>
+
+                            <select
+                                id="district"
+                                name="district"
+                            >
+
+                                <option value="">
+                                    Select a district
+                                </option>
+
+                                <option value="boloso-bombe">
+                                    Boloso Bombe
+                                </option>
+
+                                <option value="boloso-sore">
+                                    Boloso Sore
+                                </option>
+
+                                <option value="damot-gale">
+                                    Damot Gale
+                                </option>
+
+                                <option value="damot-pulasa">
+                                    Damot Pulasa
+                                </option>
+
+                                <option value="damot-sore">
+                                    Damot Sore
+                                </option>
+
+                                <option value="damot-woyde">
+                                    Damot Woyde
+                                </option>
+
+                                <option value="diguna-fango">
+                                    Diguna Fango
+                                </option>
+
+                                <option value="humbo">
+                                    Humbo
+                                </option>
+
+                                <option value="kindo-didaye">
+                                    Kindo Didaye
+                                </option>
+
+                                <option value="kindo-koysha">
+                                    Kindo Koysha
+                                </option>
+
+                                <option value="ofa">
+                                    Ofa
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Specific Area -->
+
+                        <div class="form-group">
+
+                            <label for="specificArea">
+                                Specific Area
+                            </label>
+
+                            <input
+                                type="text"
+                                id="specificArea"
+                                name="specificArea"
+                                placeholder="e.g. Near market, Kebele 02"
+                                required
+                            >
+
+                            <small>
+                                Add the kebele, neighborhood, landmark, or
+                                specific location if known.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                   
+
+
+                    <!-- Description -->
+                    <div class="form-group">
+
+                        <label for="description">
+                            Describe the Problem
+                        </label>
+
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="6"
+                            placeholder="Please describe the problem in detail..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- Photo -->
+                    <div class="form-group">
+
+                        <label for="photo">
+                            Add a Photo
+                            <span class="optional">
+                                (Optional)
+                            </span>
+                        </label>
+
+                        <input
+                            type="file"
+                            id="photo"
+                            name="photo"
+                            accept="image/*"
+                        >
+
+                        <small>
+                            A photo can help explain the problem
+                            more clearly.
+                        </small>
+
+                    </div>
+
+
+                    <!-- Submit -->
+                    <button
+                        type="submit"
+                        class="btn btn-primary report-button"
+                    >
+                        Submit Report
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="footer">
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 Wolaita Reporter.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/report.js"></script>
+
+</body>
+
+</html>
+

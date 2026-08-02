@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Explore community problems reported across Wolaita.">
+
+    <title>Explore Problems | Wolaita Reporter</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+    <header class="navbar">
+
+        <div class="container navbar-container">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+
+                <span class="logo-mark">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+
+                <span class="logo-text">
+                    Wolaita<span>Reporter</span>
+                </span>
+
+            </a>
+
+
+            <!-- Navigation -->
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="reports.html" class="active">
+                    Explore Problems
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="register.html">
+                    Register
+                </a>
+
+                <a href="report.html" class="btn btn-primary">
+                    Report a Problem
+                </a>
+
+            </nav>
+
+
+            <!-- Mobile Menu -->
+            <button class="menu-toggle" aria-label="Open navigation menu">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main>
+
+        <!-- Page Header -->
+        <section class="reports-hero">
+
+            <div class="container">
+
+                <div class="reports-header">
+
+                    <p class="section-label">
+                        COMMUNITY REPORTS
+                    </p>
+
+                    <h1>
+                        Explore Problems
+                    </h1>
+
+                    <p>
+                        See problems reported by people across
+                        Sodo City and other towns and districts
+                        of Wolaita.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FILTERS
+        ========================== -->
+        <section class="reports-section">
+
+            <div class="container">
+
+                <div class="report-filters">
+
+                    <!-- Search -->
+                    <div class="search-box">
+
+                        <label for="searchReports">
+                            Search Reports
+                        </label>
+
+                        <input
+                            type="search"
+                            id="searchReports"
+                            placeholder="Search by problem or location..."
+                        >
+
+                    </div>
+
+
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+
+                        <label for="filterCategory">
+                            Category
+                        </label>
+
+                        <select id="filterCategory">
+
+                            <option value="all">
+                                All Categories
+                            </option>
+
+                            <option value="roads">
+                                Roads
+                            </option>
+
+                            <option value="water">
+                                Water
+                            </option>
+
+                            <option value="electricity">
+                                Electricity
+                            </option>
+
+                            <option value="waste">
+                                Waste Management
+                            </option>
+
+                            <option value="public-facilities">
+                                Public Facilities
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Location Filter -->
+                    <div class="filter-group">
+
+                        <label for="filterLocation">
+                            Location
+                        </label>
+
+                        <select id="filterLocation">
+
+                            <option value="all">
+                                All Locations
+                            </option>
+
+                            <option value="sodo">
+                                Sodo City
+                            </option>
+
+                            <option value="other">
+                                Other Towns & Districts
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Status Filter -->
+                    <div class="filter-group">
+
+                        <label for="filterStatus">
+                            Status
+                        </label>
+
+                        <select id="filterStatus">
+
+                            <option value="all">
+                                All Statuses
+                            </option>
+
+                            <option value="submitted">
+                                Submitted
+                            </option>
+
+                            <option value="reviewing">
+                                Under Review
+                            </option>
+
+                            <option value="progress">
+                                In Progress
+                            </option>
+
+                            <option value="resolved">
+                                Resolved
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     REPORT CARDS
+                ========================== -->
+                <div class="reports-grid" id="reportsGrid">
+
+
+                    <!-- Report 1 -->
+                    <article
+                        class="report-card"
+                        data-category="roads"
+                        data-location="sodo"
+                        data-status="progress"
+                    >
+
+                        <div class="report-card-top">
+
+                            <span class="report-category">
+                                Roads
+                            </span>
+
+                            <span class="status status-progress">
+                                In Progress
+                            </span>
+
+                        </div>
+
+                        <h2>
+                            Damaged Road Near Market Area
+                        </h2>
+
+                        <p class="report-location">
+                            📍 Sodo City
+                        </p>
+
+                        <p class="report-description">
+                            A section of the road near the market
+                            has been damaged and is difficult to
+                            use during rainy weather.
+                        </p>
+
+                        <div class="report-card-bottom">
+
+                            <span>
+                                Reported recently
+                            </span>
+
+                            <a href="report-details.html">
+                                View Details →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Report 2 -->
+                    <article
+                        class="report-card"
+                        data-category="water"
+                        data-location="other"
+                        data-status="reviewing"
+                    >
+
+                        <div class="report-card-top">
+
+                            <span class="report-category">
+                                Water
+                            </span>
+
+                            <span class="status status-reviewing">
+                                Under Review
+                            </span>
+
+                        </div>
+
+                        <h2>
+                            Water Supply Problem
+                        </h2>
+
+                        <p class="report-location">
+                            📍 Other Towns & Districts
+                        </p>
+
+                        <p class="report-description">
+                            Residents in the area have reported
+                            difficulties accessing a reliable
+                            water supply.
+                        </p>
+
+                        <div class="report-card-bottom">
+
+                            <span>
+                                Reported recently
+                            </span>
+
+                            <a href="report-details.html">
+                                View Details →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Report 3 -->
+                    <article
+                        class="report-card"
+                        data-category="electricity"
+                        data-location="sodo"
+                        data-status="resolved"
+                    >
+
+                        <div class="report-card-top">
+
+                            <span class="report-category">
+                                Electricity
+                            </span>
+
+                            <span class="status status-resolved">
+                                Resolved
+                            </span>
+
+                        </div>
+
+                        <h2>
+                            Street Light Not Working
+                        </h2>
+
+                        <p class="report-location">
+                            📍 Sodo City
+                        </p>
+
+                        <p class="report-description">
+                            A street light that was not working
+                            has now been repaired.
+                        </p>
+
+                        <div class="report-card-bottom">
+
+                            <span>
+                                Reported recently
+                            </span>
+
+                            <a href="report-details.html">
+                                View Details →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- No Results -->
+                <div
+                    class="no-results"
+                    id="noResults"
+                >
+                    <h3>
+                        No Reports Found
+                    </h3>
+
+                    <p>
+                        Try changing your search or filters.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="footer">
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 Wolaita Reporter.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/reports.js"></script>
+
+</body>
+
+</html>
+

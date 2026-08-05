@@ -2,71 +2,46 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
+const reportsRoutes = require("./routes/reports");
+
 const app = express();
 
 const PORT = process.env.PORT || 5000;
 
 
-// =========================================
-// MIDDLEWARE
-// =========================================
+// Middleware
 
-// Allow frontend to communicate with backend
 app.use(cors());
 
-// Allow Express to read JSON data
 app.use(express.json());
 
 
-// =========================================
-// BASIC ROUTE
-// =========================================
+// Home Route
 
 app.get("/", (req, res) => {
 
     res.json({
-        message: "Wolaita Reporter API is running"
+        message: "FixMyArea API is running"
     });
 
 });
 
 
-// =========================================
-// TEST REPORTS API
-// =========================================
+// Reports Routes
 
-app.get("/api/reports", (req, res) => {
-
-    const reports = [
-        {
-            id: 1,
-            title: "Damaged Road Near Market Area",
-            category: "Roads",
-            location: "Sodo City",
-            status: "In Progress"
-        },
-        {
-            id: 2,
-            title: "Water Supply Problem",
-            category: "Water",
-            location: "Areka",
-            status: "Under Review"
-        }
-    ];
-
-    res.json(reports);
-
-});
+app.use("/api/reports", reportsRoutes);
 
 
-// =========================================
-// START SERVER
-// =========================================
+// Start Server
 
 app.listen(PORT, () => {
 
     console.log(
-        `Wolaita Reporter API running on http://localhost:${PORT}`
+        `Server running on http://localhost:${PORT}`
     );
 
 });
+
+
+
+

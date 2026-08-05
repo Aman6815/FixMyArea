@@ -136,3 +136,63 @@ statusFilter.addEventListener(
     filterReports
 );
 
+
+
+
+
+
+
+// =========================================
+// LOAD REPORTS FROM BACKEND API
+// =========================================
+
+async function loadReports() {
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:5000/api/reports"
+        );
+
+        if (!response.ok) {
+            throw new Error("Failed to load reports");
+        }
+
+        const reports = await response.json();
+
+        console.log("Reports received from backend:", reports);
+
+        displayReports(reports);
+
+    } catch (error) {
+
+        console.error(
+            "Error loading reports:",
+            error
+        );
+
+    }
+
+}
+
+
+// =========================================
+// DISPLAY REPORTS
+// =========================================
+
+function displayReports(reports) {
+
+    console.log("Displaying reports:", reports);
+
+}
+
+
+// =========================================
+// START
+// =========================================
+
+loadReports();
+
+
+
+

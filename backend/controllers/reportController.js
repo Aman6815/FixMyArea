@@ -18,9 +18,32 @@ let reports = [
 ];
 
 // GET all reports
-const getAllReports = (req, res) => {
-    res.json(reports);
+const pool = require("../config/db");
+
+const getAllReports = async (req, res) => {
+
+    try {
+
+        const result = await pool.query(
+            "SELECT * FROM reports ORDER BY id ASC"
+        );
+
+        res.json(result.rows);
+
+    } catch (error) {
+
+        console.error(error);
+
+        res.status(500).json({
+            message: "Database Error"
+        });
+
+    }
+
 };
+
+
+
 
 // GET one report
 const getReportById = (req, res) => {
@@ -39,17 +62,36 @@ const getReportById = (req, res) => {
 };
 
 // CREATE report
-const createReport = (req, res) => {
+const createReport = async (req, res) => {
 
-    const newReport = {
-        id: reports.length + 1,
-        ...req.body
-    };
+    try {
 
-    reports.push(newReport);
+        const { title, category, location, description } = req.body;
 
-    res.status(201).json(newReport);
+        const result = await pool.query(
+            `INSERT INTO reports
+            (title, category, location, description)
+            VALUES ($1, $2, $3, $4)
+            RETURNING *`,
+            [title, category, location, description]
+        );
+
+        res.status(201).json(result.rows[0]);
+
+    } catch (error) {
+
+        console.error(error);
+
+        res.status(500).json({
+            message: "Database Error"
+        });
+
+    }
+
 };
+
+
+
 
 // UPDATE report
 const updateReport = (req, res) => {

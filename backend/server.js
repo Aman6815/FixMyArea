@@ -1,3 +1,4 @@
+const pool = require("./config/db");
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
@@ -31,6 +32,14 @@ app.get("/", (req, res) => {
 
 app.use("/api/reports", reportsRoutes);
 
+pool.connect()
+    .then(() => {
+        console.log("✅ Connected to PostgreSQL");
+    })
+    .catch((err) => {
+        console.error("❌ Database connection failed");
+        console.error(err.message);
+    });
 
 // Start Server
 

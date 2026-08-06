@@ -72,7 +72,7 @@ locationType.addEventListener("change", function () {
 
 if (reportForm) {
 
-    reportForm.addEventListener("submit", function (event) {
+    reportForm.addEventListener("submit", async function (event) {
 
         // Prevent page refresh
         event.preventDefault();
@@ -161,39 +161,62 @@ if (reportForm) {
         }
 
 
-        // =====================================
-        // SUCCESS MESSAGE
-        // =====================================
+        try {
 
-        alert(
-            "Your report has been submitted successfully!"
-        );
+            const response = await fetch(
+                "http://localhost:5000/api/reports",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+
+                        title,
+
+                        category,
+
+                        location:
+                            selectedLocation === "sodo-city"
+                                ? "Sodo City"
+                                : selectedLocation === "other-cities-towns"
+                                ? selectedCity
+                                : selectedDistrict,
+
+                        description
+
+                    })
+
+                }
+            );
+
+            if (!response.ok) {
+
+                throw new Error("Failed to submit report");
+
+            }
+
+            alert("Report submitted successfully!");
+
+            reportForm.reset();
+
+            cityTownGroup.style.display = "none";
+            districtGroup.style.display = "none";
+
+        }
+        catch (error) {
+
+            console.error(error);
+
+            alert("Error submitting report.");
+
+        }
 
 
-        // =====================================
-        // DISPLAY DATA IN CONSOLE
-        // =====================================
-
-        console.log({
-
-            title: title,
-
-            category: category,
-
-            locationType: selectedLocation,
-
-            cityTown: selectedCity,
-
-            district: selectedDistrict,
-
-            specificArea: area,
-
-            description: description
-
-        });
 
     });
 
 }
+
 
 

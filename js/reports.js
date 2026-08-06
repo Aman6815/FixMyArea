@@ -182,7 +182,34 @@ async function loadReports() {
 
 function displayReports(reports) {
 
-    console.log("Displaying reports:", reports);
+    const reportsGrid = document.getElementById("reportsGrid");
+
+    reportsGrid.innerHTML = "";
+
+    reports.forEach(report => {
+
+        reportsGrid.innerHTML += `
+            <article class="report-card">
+
+                <div class="report-card-top">
+                    <span class="report-category">${report.category}</span>
+                    <span class="status">${report.status}</span>
+                </div>
+
+                <h2>${report.title}</h2>
+
+                <p class="report-location">
+                    📍 ${report.location}
+                </p>
+
+                <p class="report-description">
+                    ${report.description}
+                </p>
+
+            </article>
+        `;
+
+    });
 
 }
 
@@ -192,6 +219,7 @@ function displayReports(reports) {
 // =========================================
 
 loadReports();
+
 
 
 

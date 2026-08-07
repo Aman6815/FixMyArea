@@ -6,7 +6,7 @@ const registerForm = document.getElementById("registerForm");
 
 if (registerForm) {
 
-    registerForm.addEventListener("submit", function (event) {
+    registerForm.addEventListener("submit", async function (event) {
 
         // Prevent page refresh
         event.preventDefault();
@@ -39,22 +39,52 @@ if (registerForm) {
         }
 
 
-        // Temporary success message
-        alert(
-            `Welcome, ${fullName}! Your registration form is valid.`
-        );
 
-        // Show submitted information in console
-        console.log({
-            fullName,
-            email,
-            phone,
-            location
-        });
+        try {
+
+            const response = await fetch(
+                "http://localhost:5000/api/auth/register",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        full_name: fullName,
+                        email,
+                        password
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            if (!response.ok) {
+
+                alert(data.message);
+
+                return;
+
+            }
+
+            alert("Registration successful!");
+
+            registerForm.reset();
+
+            window.location.href = "login.html";
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert("Unable to register.");
+
+        }
 
     });
 
 }
+
 
 
 // =========================================
@@ -65,7 +95,7 @@ const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
 
-    loginForm.addEventListener("submit", function (event) {
+    loginForm.addEventListener("submit", async function (event) {
 
         // Prevent page refresh
         event.preventDefault();
@@ -78,24 +108,56 @@ if (loginForm) {
             document.getElementById("loginPassword").value;
 
 
-        // Basic validation
-        if (!email || !password) {
 
-            alert("Please enter your email and password.");
+        try {
 
-            return;
+            const response = await fetch(
+                "http://localhost:5000/api/auth/login",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        email,
+                        password
+                    })
+                }
+            );
+
+            const data = await response.json();
+
+            if (!response.ok) {
+
+                alert(data.message);
+
+                return;
+
+            }
+
+            localStorage.setItem("token", data.token);
+
+            localStorage.setItem(
+                "user",
+                JSON.stringify(data.user)
+            );
+
+            alert("Login successful!");
+
+            window.location.href = "index.html";
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert("Unable to login.");
+
         }
 
 
-        // Temporary login message
-        alert("Login form is valid.");
-
-        console.log({
-            email,
-            password
-        });
-
+        
     });
 
 }
+
 

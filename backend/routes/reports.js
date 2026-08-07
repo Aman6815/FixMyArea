@@ -21,3 +21,9 @@ router.put("/:id", updateReport);
 router.delete("/:id", deleteReport);
 
 module.exports = router;
+
+
+
+
+
+

@@ -1,23 +1,28 @@
-const pool = require("./config/db");
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
+const pool = require("./config/db");
+
 const reportsRoutes = require("./routes/reports");
+const authRoutes = require("./routes/auth");
 
 const app = express();
 
 const PORT = process.env.PORT || 5000;
 
 
-// Middleware
+// =========================================
+// MIDDLEWARE
+// =========================================
 
 app.use(cors());
-
 app.use(express.json());
 
 
-// Home Route
+// =========================================
+// HOME ROUTE
+// =========================================
 
 app.get("/", (req, res) => {
 
@@ -28,28 +33,43 @@ app.get("/", (req, res) => {
 });
 
 
-// Reports Routes
+// =========================================
+// API ROUTES
+// =========================================
 
 app.use("/api/reports", reportsRoutes);
 
+app.use("/api/auth", authRoutes);
+
+
+// =========================================
+// DATABASE CONNECTION
+// =========================================
+
 pool.connect()
     .then(() => {
+
         console.log("✅ Connected to PostgreSQL");
+
     })
     .catch((err) => {
+
         console.error("❌ Database connection failed");
         console.error(err.message);
+
     });
 
-// Start Server
+
+// =========================================
+// START SERVER
+// =========================================
 
 app.listen(PORT, () => {
 
-    console.log(
-        `Server running on http://localhost:${PORT}`
-    );
+    console.log(`Server running on http://localhost:${PORT}`);
 
 });
+
 
 
 

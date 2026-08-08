@@ -61,19 +61,35 @@ const getReportById = (req, res) => {
     res.json(report);
 };
 
+
+
 // CREATE report
 const createReport = async (req, res) => {
 
     try {
 
-        const { title, category, location, description } = req.body;
+        const {
+            title,
+            category,
+            location,
+            description
+        } = req.body;
+
+        // Get the logged-in user's ID
+        const userId = req.user.id;
 
         const result = await pool.query(
             `INSERT INTO reports
-            (title, category, location, description)
-            VALUES ($1, $2, $3, $4)
+            (title, category, location, description, user_id)
+            VALUES ($1, $2, $3, $4, $5)
             RETURNING *`,
-            [title, category, location, description]
+            [
+                title,
+                category,
+                location,
+                description,
+                userId
+            ]
         );
 
         res.status(201).json(result.rows[0]);

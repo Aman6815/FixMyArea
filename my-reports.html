@@ -149,73 +149,97 @@
 
 
 
-                <!-- =========================
-                     SUMMARY CARDS
-                ========================== -->
 
-                <div class="report-summary">
+<!-- =========================
+     SUMMARY CARDS
+========================== -->
 
+<div class="report-summary">
 
-                    <!-- Total -->
+    <!-- Total -->
+    <div class="summary-card">
 
-                    <div class="summary-card">
+        <span class="summary-number" id="totalReports">
+            0
+        </span>
 
-                        <span class="summary-number">
-                            4
-                        </span>
+        <span class="summary-label">
+            Total Reports
+        </span>
 
-                        <span class="summary-label">
-                            Total Reports
-                        </span>
-
-                    </div>
-
-
-                    <!-- Submitted -->
-
-                    <div class="summary-card">
-
-                        <span class="summary-number">
-                            1
-                        </span>
-
-                        <span class="summary-label">
-                            Submitted
-                        </span>
-
-                    </div>
+    </div>
 
 
-                    <!-- In Progress -->
+    <!-- Pending -->
+    <div class="summary-card">
 
-                    <div class="summary-card">
+        <span class="summary-number" id="pendingReports">
+            0
+        </span>
 
-                        <span class="summary-number">
-                            2
-                        </span>
+        <span class="summary-label">
+            Pending
+        </span>
 
-                        <span class="summary-label">
-                            In Progress
-                        </span>
-
-                    </div>
+    </div>
 
 
-                    <!-- Resolved -->
+    <!-- Submitted -->
+    <div class="summary-card">
 
-                    <div class="summary-card">
+        <span class="summary-number" id="submittedReports">
+            0
+        </span>
 
-                        <span class="summary-number">
-                            1
-                        </span>
+        <span class="summary-label">
+            Submitted
+        </span>
 
-                        <span class="summary-label">
-                            Resolved
-                        </span>
+    </div>
 
-                    </div>
 
-                </div>
+    <!-- Under Review -->
+    <div class="summary-card">
+
+        <span class="summary-number" id="underReviewReports">
+            0
+        </span>
+
+        <span class="summary-label">
+            Under Review
+        </span>
+
+    </div>
+
+
+    <!-- In Progress -->
+    <div class="summary-card">
+
+        <span class="summary-number" id="inProgressReports">
+            0
+        </span>
+
+        <span class="summary-label">
+            In Progress
+        </span>
+
+    </div>
+
+
+    <!-- Resolved -->
+    <div class="summary-card">
+
+        <span class="summary-number" id="resolvedReports">
+            0
+        </span>
+
+        <span class="summary-label">
+            Resolved
+        </span>
+
+    </div>
+
+</div>
 
 
 
@@ -223,207 +247,7 @@
                      REPORT LIST
                 ========================== -->
 
-                <div class="my-reports-list">
-
-
-                    <!-- Report 1 -->
-
-                    <article class="my-report-card">
-
-
-                        <div class="my-report-content">
-
-                            <div class="my-report-top">
-
-                                <span class="report-category">
-                                    Roads
-                                </span>
-
-                                <span
-                                    class="status status-progress"
-                                >
-                                    In Progress
-                                </span>
-
-                            </div>
-
-
-                            <h2>
-                                Damaged Road Near Market Area
-                            </h2>
-
-
-                            <p class="report-location">
-                                📍 Sodo City
-                            </p>
-
-
-                            <p class="my-report-date">
-                                Reported recently
-                            </p>
-
-                        </div>
-
-
-                        <a
-                            href="report-details.html"
-                            class="my-report-link"
-                        >
-                            View Details →
-                        </a>
-
-                    </article>
-
-
-
-                    <!-- Report 2 -->
-
-                    <article class="my-report-card">
-
-
-                        <div class="my-report-content">
-
-                            <div class="my-report-top">
-
-                                <span class="report-category">
-                                    Water
-                                </span>
-
-                                <span
-                                    class="status status-reviewing"
-                                >
-                                    Under Review
-                                </span>
-
-                            </div>
-
-
-                            <h2>
-                                Water Supply Problem
-                            </h2>
-
-
-                            <p class="report-location">
-                                📍 Areka
-                            </p>
-
-
-                            <p class="my-report-date">
-                                Reported recently
-                            </p>
-
-                        </div>
-
-
-                        <a
-                            href="report-details.html"
-                            class="my-report-link"
-                        >
-                            View Details →
-                        </a>
-
-                    </article>
-
-
-
-                    <!-- Report 3 -->
-
-                    <article class="my-report-card">
-
-
-                        <div class="my-report-content">
-
-                            <div class="my-report-top">
-
-                                <span class="report-category">
-                                    Electricity
-                                </span>
-
-                                <span
-                                    class="status status-resolved"
-                                >
-                                    Resolved
-                                </span>
-
-                            </div>
-
-
-                            <h2>
-                                Street Light Not Working
-                            </h2>
-
-
-                            <p class="report-location">
-                                📍 Boditi
-                            </p>
-
-
-                            <p class="my-report-date">
-                                Reported recently
-                            </p>
-
-                        </div>
-
-
-                        <a
-                            href="report-details.html"
-                            class="my-report-link"
-                        >
-                            View Details →
-                        </a>
-
-                    </article>
-
-
-
-                    <!-- Report 4 -->
-
-                    <article class="my-report-card">
-
-
-                        <div class="my-report-content">
-
-                            <div class="my-report-top">
-
-                                <span class="report-category">
-                                    Waste Management
-                                </span>
-
-                                <span
-                                    class="status status-submitted"
-                                >
-                                    Submitted
-                                </span>
-
-                            </div>
-
-
-                            <h2>
-                                Waste Collection Problem
-                            </h2>
-
-
-                            <p class="report-location">
-                                📍 Boloso Sore
-                            </p>
-
-
-                            <p class="my-report-date">
-                                Reported recently
-                            </p>
-
-                        </div>
-
-
-                        <a
-                            href="report-details.html"
-                            class="my-report-link"
-                        >
-                            View Details →
-                        </a>
-
-                    </article>
-
+                <div class="my-reports-list" id="myReportsList">
                 </div>
 
             </div>
@@ -456,6 +280,7 @@
 
 
     <script src="js/main.js"></script>
+    <script src="js/my-reports.js"></script>
 
 </body>
 

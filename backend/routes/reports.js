@@ -7,7 +7,8 @@ const {
     getReportById,
     createReport,
     updateReport,
-    deleteReport
+    deleteReport,
+    getMyReports
 } = require("../controllers/reportController");
 
 const authenticateToken =
@@ -15,6 +16,12 @@ const authenticateToken =
 
 
 router.get("/", getAllReports);
+
+router.get(
+    "/my",
+    authenticateToken,
+    getMyReports
+);
 
 router.get("/:id", getReportById);
 

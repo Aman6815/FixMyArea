@@ -13,9 +13,6 @@ const locationFilter =
 const statusFilter =
     document.getElementById("filterStatus");
 
-const reportCards =
-    document.querySelectorAll(".report-card");
-
 const noResults =
     document.getElementById("noResults");
 
@@ -23,6 +20,9 @@ const noResults =
 // Filter reports
 
 function filterReports() {
+
+    const reportCards =
+        document.querySelectorAll(".report-card");
 
     const searchText =
         searchInput.value.toLowerCase().trim();
@@ -205,6 +205,47 @@ function statusClass(status) {
 
 
 // =========================================
+// STATUS -> FILTER SLUG
+// (matches the <option value="..."> in #filterStatus)
+// =========================================
+
+function statusToSlug(status) {
+
+    switch (status) {
+
+        case "Submitted":
+            return "submitted";
+
+        case "Under Review":
+            return "reviewing";
+
+        case "In Progress":
+            return "progress";
+
+        case "Resolved":
+            return "resolved";
+
+        default:
+            return "";
+
+    }
+
+}
+
+
+// =========================================
+// LOCATION -> FILTER SLUG
+// (matches the <option value="..."> in #filterLocation)
+// =========================================
+
+function locationToSlug(location) {
+
+    return location === "Sodo City" ? "sodo" : "other";
+
+}
+
+
+// =========================================
 // DISPLAY REPORTS
 // =========================================
 
@@ -217,7 +258,12 @@ function displayReports(reports) {
     reports.forEach(report => {
 
         reportsGrid.innerHTML += `
-            <article class="report-card">
+            <article
+                class="report-card"
+                data-category="${report.category}"
+                data-location="${locationToSlug(report.location)}"
+                data-status="${statusToSlug(report.status)}"
+            >
 
                 <div class="report-card-top">
                     <span class="report-category">${report.category}</span>
@@ -242,6 +288,9 @@ function displayReports(reports) {
         `;
 
     });
+
+    // Cards just changed, so re-apply the current filters/search
+    filterReports();
 
 }
 

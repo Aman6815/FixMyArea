@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 require("dotenv").config();
 
 const pool = require("./config/db");
@@ -18,6 +19,9 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+
+// Serve uploaded report photos
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 
 // =========================================
@@ -58,6 +62,22 @@ pool.connect()
         console.error(err.message);
 
     });
+
+
+// =========================================
+// ERROR HANDLER
+// (e.g. multer upload errors: bad file type, too large)
+// =========================================
+
+app.use((err, req, res, next) => {
+
+    console.error(err);
+
+    res.status(400).json({
+        message: err.message || "Something went wrong"
+    });
+
+});
 
 
 // =========================================

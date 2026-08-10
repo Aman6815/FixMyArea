@@ -113,6 +113,41 @@ async function loadReportDetails() {
 
 
 // =========================================
+// DISPLAY REPORT PHOTO (OR NO-PHOTO MESSAGE)
+// =========================================
+
+function displayReportPhoto(imageUrl) {
+
+    const container =
+        document.getElementById("reportPhotoContainer");
+
+    if (imageUrl) {
+
+        container.className = "report-photo-wrapper";
+
+        container.innerHTML = `
+            <img
+                src="http://localhost:5000${imageUrl}"
+                alt="Report photo"
+                class="report-photo"
+            >
+        `;
+
+    } else {
+
+        container.className = "report-image-placeholder";
+
+        container.innerHTML = `
+            <span>📷</span>
+            <p>No photo was added for this report.</p>
+        `;
+
+    }
+
+}
+
+
+// =========================================
 // DISPLAY REPORT
 // =========================================
 
@@ -137,6 +172,8 @@ function displayReportDetails(report) {
 
     document.getElementById("reportDescription").textContent =
         report.description;
+
+    displayReportPhoto(report.image_url);
 
     const dateEl = document.getElementById("reportDate");
 
@@ -216,4 +253,3 @@ function updateStatusTimeline(status) {
 // =========================================
 
 loadReportDetails();
-

@@ -14,6 +14,9 @@ const {
 const authenticateToken =
     require("../middleware/authMiddleware");
 
+const upload =
+    require("../middleware/upload");
+
 
 router.get("/", getAllReports);
 
@@ -25,11 +28,16 @@ router.get(
 
 router.get("/:id", getReportById);
 
-router.post("/", authenticateToken, createReport);
+router.post(
+    "/",
+    authenticateToken,
+    upload.single("photo"),
+    createReport
+);
 
-router.put("/:id", updateReport);
+router.put("/:id", authenticateToken, updateReport);
 
-router.delete("/:id", deleteReport);
+router.delete("/:id", authenticateToken, deleteReport);
 
 
 module.exports = router;

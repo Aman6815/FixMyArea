@@ -163,31 +163,41 @@ if (reportForm) {
 
         try {
 
+            const formData = new FormData();
+
+            formData.append("title", title);
+            formData.append("category", category);
+
+            formData.append(
+                "location",
+                selectedLocation === "sodo-city"
+                    ? "Sodo City"
+                    : selectedLocation === "other-cities-towns"
+                    ? selectedCity
+                    : selectedDistrict
+            );
+
+            formData.append("description", description);
+
+            const photoInput =
+                document.getElementById("photo");
+
+            if (photoInput.files[0]) {
+
+                formData.append("photo", photoInput.files[0]);
+
+            }
+
             const response = await fetch(
                 "http://localhost:5000/api/reports",
                 {
                     method: "POST",
                     headers: {
-                        "Content-Type": "application/json",
+                        // No Content-Type here — the browser sets the
+                        // correct multipart boundary for FormData itself.
                         "Authorization": `Bearer ${localStorage.getItem("token")}`
                     },
-                    body: JSON.stringify({
-
-                        title,
-
-                        category,
-
-                        location:
-                            selectedLocation === "sodo-city"
-                                ? "Sodo City"
-                                : selectedLocation === "other-cities-towns"
-                                ? selectedCity
-                                : selectedDistrict,
-
-                        description
-
-                    })
-
+                    body: formData
                 }
             );
 

@@ -115,39 +115,39 @@
                          MAIN REPORT
                     ========================== -->
 
-                    <article class="report-details-card">
+                    <article class="report-details-card" id="reportDetailsCard">
 
                         <div class="report-details-top">
 
-                            <span class="report-category">
-                                Roads
+                            <span class="report-category" id="reportCategory">
+                                &nbsp;
                             </span>
 
-                            <span class="status status-progress">
-                                In Progress
+                            <span class="status" id="reportStatus">
+                                &nbsp;
                             </span>
 
                         </div>
 
 
-                        <h1>
-                            Damaged Road Near Market Area
+                        <h1 id="reportTitle">
+                            Loading report...
                         </h1>
 
 
-                        <p class="report-location">
-                            📍 Sodo City
+                        <p class="report-location" id="reportLocation">
+                            &nbsp;
                         </p>
 
 
                         <div class="report-meta">
 
-                            <span>
-                                Reported recently
+                            <span id="reportDate">
+                                &nbsp;
                             </span>
 
-                            <span>
-                                Category: Roads
+                            <span id="reportMetaCategory">
+                                &nbsp;
                             </span>
 
                         </div>
@@ -161,33 +161,8 @@
                                 Problem Description
                             </h2>
 
-                            <p>
-                                A section of the road near the market
-                                has been damaged and is difficult to
-                                use during rainy weather. The damaged
-                                section is affecting pedestrians,
-                                drivers, and local businesses.
-                            </p>
-
-                        </div>
-
-
-                        <!-- Location -->
-
-                        <div class="details-block">
-
-                            <h2>
-                                Location
-                            </h2>
-
-                            <p>
-                                <strong>Location Type:</strong>
-                                Sodo City
-                            </p>
-
-                            <p>
-                                <strong>Specific Area:</strong>
-                                Near the market area
+                            <p id="reportDescription">
+                                &nbsp;
                             </p>
 
                         </div>
@@ -208,7 +183,7 @@
                                 </span>
 
                                 <p>
-                                    Report image will appear here
+                                    Photo uploads aren't supported yet.
                                 </p>
 
                             </div>
@@ -222,7 +197,7 @@
                          REPORT STATUS
                     ========================== -->
 
-                    <aside class="report-status-card">
+                    <aside class="report-status-card" id="reportStatusCard">
 
                         <h2>
                             Report Progress
@@ -234,7 +209,7 @@
 
                             <!-- Submitted -->
 
-                            <div class="timeline-item completed">
+                            <div class="timeline-item" id="step-submitted">
 
                                 <div class="timeline-icon">
                                     ✓
@@ -258,7 +233,7 @@
 
                             <!-- Under Review -->
 
-                            <div class="timeline-item completed">
+                            <div class="timeline-item" id="step-review">
 
                                 <div class="timeline-icon">
                                     ✓
@@ -282,7 +257,7 @@
 
                             <!-- In Progress -->
 
-                            <div class="timeline-item current">
+                            <div class="timeline-item" id="step-progress">
 
                                 <div class="timeline-icon">
                                     ●
@@ -306,7 +281,7 @@
 
                             <!-- Resolved -->
 
-                            <div class="timeline-item">
+                            <div class="timeline-item" id="step-resolved">
 
                                 <div class="timeline-icon">
                                     ○
@@ -359,12 +334,9 @@
 
 
     <script src="js/main.js"></script>
+    <script src="js/report-details.js"></script>
 
 </body>
 
 </html>
-
-
-
-
 

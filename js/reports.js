@@ -177,6 +177,34 @@ async function loadReports() {
 
 
 // =========================================
+// STATUS BADGE COLOR CLASS
+// =========================================
+
+function statusClass(status) {
+
+    switch (status) {
+
+        case "Submitted":
+            return "status-submitted";
+
+        case "Under Review":
+            return "status-reviewing";
+
+        case "In Progress":
+            return "status-progress";
+
+        case "Resolved":
+            return "status-resolved";
+
+        default:
+            return "";
+
+    }
+
+}
+
+
+// =========================================
 // DISPLAY REPORTS
 // =========================================
 
@@ -193,7 +221,7 @@ function displayReports(reports) {
 
                 <div class="report-card-top">
                     <span class="report-category">${report.category}</span>
-                    <span class="status">${report.status}</span>
+                    <span class="status ${statusClass(report.status)}">${report.status}</span>
                 </div>
 
                 <h2>${report.title}</h2>
@@ -205,6 +233,10 @@ function displayReports(reports) {
                 <p class="report-description">
                     ${report.description}
                 </p>
+
+                <a href="report-details.html?id=${report.id}" class="my-report-link">
+                    View Details →
+                </a>
 
             </article>
         `;

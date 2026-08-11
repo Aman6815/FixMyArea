@@ -2070,6 +2070,34 @@ section {
 }
 
 
+.admin-controls {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+
+.status-select {
+    padding: 8px 10px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
 .my-report-card {
     display: flex;
 

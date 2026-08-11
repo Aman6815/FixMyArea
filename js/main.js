@@ -33,6 +33,7 @@ const registerLink = document.getElementById("registerLink");
 const myReportsLink = document.getElementById("myReportsLink");
 const reportLink = document.getElementById("reportLink");
 const logoutLink = document.getElementById("logoutLink");
+const adminLink = document.getElementById("adminLink");
 
 if (user) {
 
@@ -44,12 +45,18 @@ if (user) {
 
     if (logoutLink) logoutLink.style.display = "inline-block";
 
+    if (adminLink) {
+        adminLink.style.display = user.is_admin ? "inline-block" : "none";
+    }
+
 } else {
 
     if (myReportsLink) myReportsLink.style.display = "none";
     if (reportLink) reportLink.style.display = "none";
 
     if (logoutLink) logoutLink.style.display = "none";
+
+    if (adminLink) adminLink.style.display = "none";
 
 }
 

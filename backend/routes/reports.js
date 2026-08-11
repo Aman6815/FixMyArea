@@ -7,12 +7,16 @@ const {
     getReportById,
     createReport,
     updateReport,
+    updateReportStatus,
     deleteReport,
     getMyReports
 } = require("../controllers/reportController");
 
 const authenticateToken =
     require("../middleware/authMiddleware");
+
+const requireAdmin =
+    require("../middleware/adminMiddleware");
 
 const upload =
     require("../middleware/upload");
@@ -36,6 +40,13 @@ router.post(
 );
 
 router.put("/:id", authenticateToken, updateReport);
+
+router.patch(
+    "/:id/status",
+    authenticateToken,
+    requireAdmin,
+    updateReportStatus
+);
 
 router.delete("/:id", authenticateToken, deleteReport);
 

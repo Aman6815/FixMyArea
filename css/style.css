@@ -2178,6 +2178,84 @@ section {
 }
 
 
+.report-card-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 10px;
+}
+
+
+.report-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.btn-edit,
+.btn-delete {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    border: 1px solid transparent;
+
+    transition: var(--transition);
+}
+
+
+.btn-edit {
+    background-color: var(--light-gray);
+
+    color: var(--text-dark);
+
+    border-color: var(--border-color);
+}
+
+.btn-edit:hover {
+    background-color: var(--border-color);
+}
+
+
+.btn-delete {
+    background-color: var(--primary-light);
+
+    color: var(--primary-dark);
+
+    border-color: var(--primary-light);
+}
+
+.btn-delete:hover {
+    background-color: var(--primary-color);
+
+    color: var(--white);
+}
+
+
 /* Submitted Status */
 
 .status-submitted {

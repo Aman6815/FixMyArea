@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Edit a problem you previously reported.">
+
+    <title>Edit Report | Wolaita Reporter</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+    <header class="navbar">
+
+        <div class="container navbar-container">
+
+            <a href="index.html" class="logo">
+                <span class="logo-mark">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+
+                <span class="logo-text">
+                    Wolaita<span>Reporter</span>
+                </span>
+            </a>
+
+
+            <nav class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="reports.html">
+                    Explore Problems
+                </a>
+
+                <a href="my-reports.html" class="active" id="myReportsLink">
+                    My Reports
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="login.html" id="loginLink">
+                    Login
+                </a>
+
+                <a href="register.html" id="registerLink">
+                    Register
+                </a>
+
+                <a href="admin.html" id="adminLink" style="display:none;">
+                    Admin
+                </a>
+
+                <a href="#" id="logoutLink" style="display:none;">
+                    Logout
+                </a>
+
+                <a href="report.html" class="btn btn-primary" id="reportLink">
+                    Report a Problem
+                </a>
+
+            </nav>
+
+
+            <button class="menu-toggle" aria-label="Open navigation menu">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         EDIT REPORT SECTION
+    ========================== -->
+    <main>
+
+        <section class="report-section">
+
+            <div class="report-container">
+
+                <div class="report-header">
+
+                    <p class="section-label">
+                        UPDATE YOUR REPORT
+                    </p>
+
+                    <h1>
+                        Edit Report
+                    </h1>
+
+                    <p>
+                        Update the details of a problem you reported.
+                    </p>
+
+                </div>
+
+
+                <form class="report-form" id="editReportForm">
+
+                    <!-- Problem Title -->
+                    <div class="form-group">
+
+                        <label for="editTitle">
+                            Problem Title
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editTitle"
+                            name="title"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Category -->
+                    <div class="form-group">
+
+                        <label for="editCategory">
+                            Problem Category
+                        </label>
+
+                        <select id="editCategory" name="category" required>
+
+                            <option value="roads">
+                                Roads
+                            </option>
+
+                            <option value="water">
+                                Water
+                            </option>
+
+                            <option value="electricity">
+                                Electricity
+                            </option>
+
+                            <option value="waste">
+                                Waste Management
+                            </option>
+
+                            <option value="public-facilities">
+                                Public Facilities
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Location -->
+                    <div class="form-group">
+
+                        <label for="editLocation">
+                            Location
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editLocation"
+                            name="location"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Description -->
+                    <div class="form-group">
+
+                        <label for="editDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="editDescription"
+                            name="description"
+                            rows="6"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <small>
+                        The report's photo can't be changed here yet.
+                    </small>
+
+
+                    <!-- Submit -->
+                    <button type="submit" class="btn btn-primary">
+                        Save Changes
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="footer">
+
+        <div class="footer-bottom">
+            <p>
+                &copy; 2026 Wolaita Reporter.
+                All rights reserved.
+            </p>
+        </div>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+    <script src="js/edit-report.js"></script>
+
+</body>
+
+</html>

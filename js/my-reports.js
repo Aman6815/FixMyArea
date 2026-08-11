@@ -180,9 +180,29 @@ function displayMyReports(reports) {
                     ${report.description}
                 </p>
 
-                <a href="report-details.html?id=${report.id}" class="my-report-link">
-                    View Details →
-                </a>
+                <div class="report-card-bottom">
+
+                    <a href="report-details.html?id=${report.id}" class="my-report-link">
+                        View Details →
+                    </a>
+
+                    <div class="report-actions">
+
+                        <a href="edit-report.html?id=${report.id}" class="btn-edit">
+                            ✏️ Edit
+                        </a>
+
+                        <button
+                            type="button"
+                            class="btn-delete delete-report-btn"
+                            data-report-id="${report.id}"
+                        >
+                            🗑️ Delete
+                        </button>
+
+                    </div>
+
+                </div>
 
             </article>
 
@@ -191,6 +211,65 @@ function displayMyReports(reports) {
     });
 
 }
+
+
+// =========================================
+// DELETE A REPORT
+// =========================================
+
+document.addEventListener("click", async function (event) {
+
+    if (!event.target.classList.contains("delete-report-btn")) {
+
+        return;
+
+    }
+
+    const reportId = event.target.dataset.reportId;
+
+    const confirmed = confirm(
+        "Are you sure you want to delete this report? " +
+        "This cannot be undone."
+    );
+
+    if (!confirmed) {
+
+        return;
+
+    }
+
+    try {
+
+        const token = localStorage.getItem("token");
+
+        const response = await fetch(
+            `http://localhost:5000/api/reports/${reportId}`,
+            {
+                method: "DELETE",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            }
+        );
+
+        if (!response.ok) {
+
+            throw new Error("Failed to delete report");
+
+        }
+
+        // Reload the list so the deleted report disappears
+        loadMyReports();
+
+    } catch (error) {
+
+        console.error("Error deleting report:", error);
+
+        alert("Could not delete this report. Please try again.");
+
+    }
+
+});
 
 
 // =========================================

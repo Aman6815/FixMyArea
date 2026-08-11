@@ -88,7 +88,7 @@ async function loadReportDetails() {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/api/reports/${id}`
+            `${API_BASE_URL}/api/reports/${id}`
         );
 
         if (!response.ok) {
@@ -127,7 +127,7 @@ function displayReportPhoto(imageUrl) {
 
         container.innerHTML = `
             <img
-                src="http://localhost:5000${imageUrl}"
+                src="${API_BASE_URL}${imageUrl}"
                 alt="Report photo"
                 class="report-photo"
             >

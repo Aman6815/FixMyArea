@@ -63,7 +63,7 @@ async function loadAllReports() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/reports"
+            `${API_BASE_URL}/api/reports`
         );
 
         if (!response.ok) {
@@ -211,7 +211,7 @@ document.addEventListener("change", async function (event) {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/api/reports/${reportId}/status`,
+            `${API_BASE_URL}/api/reports/${reportId}/status`,
             {
                 method: "PATCH",
                 headers: {

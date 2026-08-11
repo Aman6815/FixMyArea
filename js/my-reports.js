@@ -18,7 +18,7 @@ async function loadMyReports() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/reports/my",
+            `${API_BASE_URL}/api/reports/my`,
             {
                 headers: {
                     "Authorization": `Bearer ${token}`
@@ -243,7 +243,7 @@ document.addEventListener("click", async function (event) {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-            `http://localhost:5000/api/reports/${reportId}`,
+            `${API_BASE_URL}/api/reports/${reportId}`,
             {
                 method: "DELETE",
                 headers: {

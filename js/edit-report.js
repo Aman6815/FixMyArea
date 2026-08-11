@@ -44,7 +44,7 @@ async function loadReportForEdit() {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/api/reports/${reportId}`
+            `${API_BASE_URL}/api/reports/${reportId}`
         );
 
         if (!response.ok) {
@@ -105,7 +105,7 @@ if (editForm) {
         try {
 
             const response = await fetch(
-                `http://localhost:5000/api/reports/${reportId}`,
+                `${API_BASE_URL}/api/reports/${reportId}`,
                 {
                     method: "PUT",
                     headers: {

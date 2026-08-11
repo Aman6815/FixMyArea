@@ -151,7 +151,7 @@ async function loadReports() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/reports"
+            `${API_BASE_URL}/api/reports`
         );
 
         if (!response.ok) {

@@ -16,4 +16,4 @@
 // This file must be loaded (via <script>) BEFORE any other script
 // that uses API_BASE_URL.
 
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = "https://fixmyarea-backend-0shz.onrender.com";

@@ -41,7 +41,11 @@ if (user) {
     if (registerLink) registerLink.style.display = "none";
 
     if (myReportsLink) myReportsLink.style.display = "inline-block";
-    if (reportLink) reportLink.style.display = "inline-block";
+
+    // Admins manage reports, they don't submit their own
+    if (reportLink) {
+        reportLink.style.display = user.is_admin ? "none" : "inline-block";
+    }
 
     if (logoutLink) logoutLink.style.display = "inline-block";
 

@@ -1,4 +1,17 @@
 // =========================================
+// GUARD: ADMINS DON'T SUBMIT REPORTS
+// =========================================
+
+const currentUser = JSON.parse(localStorage.getItem("user"));
+
+if (currentUser && currentUser.is_admin) {
+
+    window.location.href = "admin.html";
+
+}
+
+
+// =========================================
 // REPORT FORM
 // =========================================
 
